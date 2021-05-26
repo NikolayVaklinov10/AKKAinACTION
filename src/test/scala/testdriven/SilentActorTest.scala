@@ -18,9 +18,13 @@ class SilentActorTest extends TestKit(ActorSystem("testsystem"))
       val silentActor = system.actorOf(Props[SilentActor], "s3")
       silentActor ! SilentMessage("whisper1")
       silentActor ! SilentMessage("whisper2")
+      silentActor ! SilentMessage("whisper3")
+      silentActor ! SilentMessage("whisper4")
+      silentActor ! SilentMessage("whisper5")
       silentActor ! GetState(testActor)
-      expectMsg(Vector("whisper1", "whisper2"))
+      expectMsg(Vector("whisper1", "whisper2","whisper3", "whisper4","whisper5"))
     }
+
 
   }
 
