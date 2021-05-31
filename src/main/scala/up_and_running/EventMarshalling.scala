@@ -15,6 +15,7 @@ case class Error(message: String)
 
 
 trait EventMarshalling extends DefaultJsonProtocol {
+
   import BoxOffice._
 
 
